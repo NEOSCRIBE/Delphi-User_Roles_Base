@@ -19,7 +19,7 @@ TURConnection = class
     Query: TADOQuery;
     constructor Create(const server, user, pass: string;
       const conStr: string = 'Provider=MSDAORA.1;Password=%s;User ID=%s;Data Source=%s;Persist Security Info=True');
-    destructor Destoy; override;
+    destructor Destroy; override;
     procedure Connect;
     procedure Disconnect;
     property Connected: boolean read fConnected write SetConnected;
@@ -629,7 +629,7 @@ begin
   end;
 end;
 
-destructor TURConnection.Destoy;
+destructor TURConnection.Destroy;
 begin
   Query.Close;
   Conn.Close;

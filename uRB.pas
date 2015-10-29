@@ -19,7 +19,7 @@ TURConnection = class
     Query: TADOQuery;
     constructor Create(const server, user, pass: string;
       const conStr: string = 'Provider=MSDAORA.1;Password=%s;User ID=%s;Data Source=%s;Persist Security Info=True');
-    destructor Destoy;
+    destructor Destoy; override;
     procedure Connect;
     procedure Disconnect;
     property Connected: boolean read fConnected write SetConnected;
@@ -46,7 +46,7 @@ TUser = class
     function GetRoleIndex(const roleName: string): integer;
     function RoleCount: integer;
     constructor Create;
-    destructor Destroy;
+    destructor Destroy; override;
 end;
 
 TUserList = class(TObjectList<TUser>)
